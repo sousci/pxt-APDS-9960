@@ -70,7 +70,7 @@ namespace apds9960 {
         let val = pins.i2cReadNumber(addr, NumberFormat.UInt8BE);
         return val;
     }
-    
+
     function rgb2hue(r: number, g: number, b: number): number {
         // no float support for pxt ts
         r = r * 100 / 255;
@@ -155,6 +155,18 @@ namespace apds9960 {
         b = b*255/avg;
         let hue = rgb2hue(r,g,b);
         return hue
+    }
+
+    //% blockId=apds9960_readdistance block="APDS9960 Get Distance"
+    //% weight=98
+    export function ReadColor(): number {
+        let tmp = i2cread(ADDR, APDS9960_STATUS) & 0x1;
+        while(!tmp){
+            basic.pause(5);
+            tmp = i2cread(ADDR, APDS9960_STATUS) & 0x1;
+        }
+        let distance = i2cread(ADDR, APDS9960_PDATA);
+        return distance
     }
 
 }
