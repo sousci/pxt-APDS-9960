@@ -132,9 +132,9 @@ namespace apds9960 {
     //% blockId=apds9960_getstatus
     //% block="STATUS"
     //% weight=98
-    export function id(): number {
-        let chipid = i2cread(ADDR, APDS9960_ID);
-        return chipid;
+    export function status(): number {
+        let chipstatus = i2cread(ADDR, APDS9960_STATUS);
+        return chipstatus;
     }
 
     //% blockId=apds9960_readcolor
