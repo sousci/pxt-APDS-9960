@@ -136,6 +136,12 @@ namespace apds9960 {
         let tmp = i2cread(ADDR, APDS9960_ENABLE) | 0x2;
         i2cwrite(ADDR, APDS9960_ENABLE, tmp);
     }
+    //% blockId=apds9960_distancemode block="APDS9960 Distance Mode"
+    //% weight=98
+    export function DistanceMode(): void {
+        let tmp = i2cread(ADDR, APDS9960_ENABLE) | 0x4;
+        i2cwrite(ADDR, APDS9960_ENABLE, tmp);
+    }
     //% blockId=apds9960_readcolor block="APDS9960 Get Color"
     //% weight=98
     export function ReadColor(): number {
