@@ -120,6 +120,7 @@ namespace apds9960 {
         // power on
         i2cwrite(ADDR, APDS9960_ENABLE, 0x01) // clear all interrupt
     }
+
     /**
      * Gets APDS9960 CHIP ID
      * It should return 0xAB or 171
@@ -130,12 +131,7 @@ namespace apds9960 {
         let chipid = i2cread(ADDR, APDS9960_ID);
         return chipid;
     }
-    //% blockId=apds9960_colormode block="APDS9960 Color Mode"
-    //% weight=98
-    export function ColorMode(): void {
-        let tmp = i2cread(ADDR, APDS9960_ENABLE) | 0x2;
-        i2cwrite(ADDR, APDS9960_ENABLE, tmp);
-    }
+
     //% blockId=apds9960_readcolor block="APDS9960 Get Color"
     //% weight=98
     export function ReadColor(): number {
