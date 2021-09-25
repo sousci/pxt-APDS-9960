@@ -7,7 +7,6 @@
         "core": "*"
     },
     "files": [
-        "README.md",
         "main.ts",
         "_locales/ja/pxt-APDS-9960-strings.json"
     ],

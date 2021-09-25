@@ -121,19 +121,25 @@ namespace apds9960 {
         i2cwrite(ADDR, APDS9960_ENABLE, 0x01) // clear all interrupt
     }
 
-    /**
-     * Gets APDS9960 CHIP ID
-     * It should return 0xAB or 171
-     */
-    //% blockId=apds9960_getid block="ID"
+    //% blockId=apds9960_getid
+    //% block="ID"
     //% weight=99
+    export function id(): number {
+        let chipid = i2cread(ADDR, APDS9960_ID); //It should return 171(0xAB)
+        return chipid;
+    }
+
+    //% blockId=apds9960_getstatus
+    //% block="STATUS"
+    //% weight=98
     export function id(): number {
         let chipid = i2cread(ADDR, APDS9960_ID);
         return chipid;
     }
 
-    //% blockId=apds9960_readcolor block="APDS9960 Get Color"
-    //% weight=98
+    //% blockId=apds9960_readcolor
+    //% block="Get Color"
+    //% weight=97
     export function ReadColor(): number {
         let tmp = i2cread(ADDR, APDS9960_ENABLE) | 0x2;
         i2cwrite(ADDR, APDS9960_ENABLE, tmp);
@@ -151,8 +157,9 @@ namespace apds9960 {
         return hue
     }
 
-    //% blockId=apds9960_readdistance block="APDS9960 Get Distance"
-    //% weight=98
+    //% blockId=apds9960_readdistance
+    //% block="Get Distance"
+    //% weight=96
     export function ReadDistance(): number {
         let tmp = i2cread(ADDR, APDS9960_ENABLE) | 0x4;
         i2cwrite(ADDR, APDS9960_ENABLE, tmp);
