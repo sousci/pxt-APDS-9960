@@ -166,11 +166,6 @@ namespace apds9960 {
     //% blockId=apds9960_readdistance block="APDS9960 Get Distance"
     //% weight=98
     export function ReadDistance(): number {
-        let tmp = i2cread(ADDR, APDS9960_STATUS) & 0x1;
-        while(!tmp){
-            basic.pause(5);
-            tmp = i2cread(ADDR, APDS9960_STATUS) & 0x1;
-        }
         let distance = i2cread(ADDR, APDS9960_PDATA);
         return distance
     }
