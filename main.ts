@@ -136,20 +136,12 @@ namespace apds9960 {
         let tmp = i2cread(ADDR, APDS9960_ENABLE) | 0x2;
         i2cwrite(ADDR, APDS9960_ENABLE, tmp);
     }
-    //% blockId=apds9960_distancemode block="APDS9960 Distance Mode"
-    //% weight=98
-    export function DistanceMode(): void {
-        let tmp = i2cread(ADDR, APDS9960_ENABLE) | 0x4;
-        i2cwrite(ADDR, APDS9960_ENABLE, tmp);
-    }
     //% blockId=apds9960_readcolor block="APDS9960 Get Color"
     //% weight=98
     export function ReadColor(): number {
-        let tmp = i2cread(ADDR, APDS9960_STATUS) & 0x1;
-        while(!tmp){
-            basic.pause(5);
-            tmp = i2cread(ADDR, APDS9960_STATUS) & 0x1;
-        }
+        let tmp = i2cread(ADDR, APDS9960_ENABLE) | 0x2;
+        i2cwrite(ADDR, APDS9960_ENABLE, tmp);
+        basic.pause(10);
         let c = i2cread(ADDR, APDS9960_CDATAL) + i2cread(ADDR, APDS9960_CDATAH)*256;
         let r = i2cread(ADDR, APDS9960_RDATAL) + i2cread(ADDR, APDS9960_RDATAH)*256;
         let g = i2cread(ADDR, APDS9960_GDATAL) + i2cread(ADDR, APDS9960_GDATAH)*256;
@@ -166,6 +158,9 @@ namespace apds9960 {
     //% blockId=apds9960_readdistance block="APDS9960 Get Distance"
     //% weight=98
     export function ReadDistance(): number {
+        let tmp = i2cread(ADDR, APDS9960_ENABLE) | 0x4;
+        i2cwrite(ADDR, APDS9960_ENABLE, tmp);
+        basic.pause(10);
         let distance = i2cread(ADDR, APDS9960_PDATA);
         return distance
     }
