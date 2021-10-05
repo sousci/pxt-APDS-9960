@@ -1,6 +1,6 @@
 {
     "name": "pxt-apds9960",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "APDS-9960 Extension for microbit",
     "license": "MIT",
     "dependencies": {
@@ -8,7 +8,7 @@
     },
     "files": [
         "main.ts",
-        "_locales/ja/pxt-APDS-9960-strings.json"
+        "_locales/ja/pxt-APDS-9960-strings.json",
         "_locales/ja/pxt-APDS-9960-jsdoc-strings.json"
     ],
     "testFiles": [
