@@ -122,7 +122,7 @@ namespace apds9960 {
     }
 
     //% blockId=apds9960_getid
-    //% block="ID"
+    //% block="get ID"
     //% weight=99
     export function id(): number {
         let chipid = i2cread(ADDR, APDS9960_ID); //It should return 171(0xAB)
@@ -130,7 +130,7 @@ namespace apds9960 {
     }
 
     //% blockId=apds9960_getstatus
-    //% block="STATUS"
+    //% block="get Status"
     //% weight=98
     export function status(): number {
         let chipstatus = i2cread(ADDR, APDS9960_STATUS);
