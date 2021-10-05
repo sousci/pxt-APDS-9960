@@ -1,5 +1,5 @@
 {
-  "apds9960.ReadDistance|block":"距離",
-  "apds9960.ReadColor|block":"色相",
-  "apds9960.Init|block":"ジェスチャーセンサを初期化"
+  "apds9960.ReadDistance|block":"近接センサのデータを取得します",
+  "apds9960.ReadColor|block":"カラーセンサを用いて色相を取得します",
+  "apds9960.Init|block":"APDS9960を初期化します"
 }
