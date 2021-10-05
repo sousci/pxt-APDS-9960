@@ -1,5 +1,5 @@
 {
-    "name": "apds9960",
+    "name": "pxt-apds9960",
     "version": "0.1.0",
     "description": "APDS-9960 Extension for microbit",
     "license": "MIT",
