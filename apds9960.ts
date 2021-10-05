@@ -2,9 +2,7 @@
 /**
  * APDS-9960
  */
-//% weight=100 color=#00A654 icon="\uf0a0" block="APDS-9960"
-
-//% color="#31C7D5" weight=10 icon="\uf06e"
+//% weight=999 color=#00A654 icon="\uf0a0" block="APDS-9960"
 namespace apds9960 {
     const ADDR = 0x39
     const APDS9960_RAM = 0x00
@@ -109,7 +107,10 @@ namespace apds9960 {
         return hue * 60/100;
     }
 
-    //% blockId=apds9960_init block="APDS9960 Init"
+    /**
+     * Init an gesture sensor APDS9960.
+     */
+    //% block="APDS9960 Init"
     //% weight=100
     export function Init(): void {
         i2cwrite(ADDR, APDS9960_ATIME, 252) // default inte time 4x2.78ms
@@ -121,7 +122,9 @@ namespace apds9960 {
         i2cwrite(ADDR, APDS9960_ENABLE, 0x01) // clear all interrupt
     }
 
-    //% blockId=apds9960_getid
+    /**
+     * Init an gesture sensor APDS9960.
+     */
     //% block="get ID"
     //% weight=99
     export function Id(): number {
@@ -129,7 +132,9 @@ namespace apds9960 {
         return chipid;
     }
 
-    //% blockId=apds9960_getstatus
+    /**
+     * get a status value of gesture sensor APDS9960.
+     */
     //% block="get Status"
     //% weight=98
     export function Status(): number {
@@ -137,8 +142,10 @@ namespace apds9960 {
         return chipstatus;
     }
 
-    //% blockId=apds9960_readcolor
-    //% block="Get Color"
+    /**
+     * get a hue data of gesture sensor APDS9960.
+     */
+     //% block="Get Color"
     //% weight=97
     export function ReadColor(): number {
         let tmp = i2cread(ADDR, APDS9960_ENABLE) | 0x2;
@@ -157,7 +164,9 @@ namespace apds9960 {
         return hue
     }
 
-    //% blockId=apds9960_readdistance
+    /**
+     * get a distance data of gesture sensor APDS9960.
+     */
     //% block="Get Distance"
     //% weight=96
     export function ReadDistance(): number {
