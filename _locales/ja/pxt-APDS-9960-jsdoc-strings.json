@@ -1,4 +1,6 @@
 {
+  "apds9960_getid|blockId":"APDS9960のIDを取得します",
+  "apds9960_getstatus|blockId":"APDS9960のステータスを取得します",
   "apds9960.ReadDistance|block":"近接センサのデータを取得します",
   "apds9960.ReadColor|block":"カラーセンサを用いて色相を取得します",
   "apds9960.Init|block":"APDS9960を初期化します"
