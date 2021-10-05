@@ -7,8 +7,9 @@
         "core": "*"
     },
     "files": [
-        "main.ts",
+        "apds9960.ts",
         "_locales/ja/pxt-APDS-9960-strings.json"
+        "_locales/ja/pxt-APDS-9960-jsdoc-strings.json"
     ],
     "testFiles": [
         "test.ts"

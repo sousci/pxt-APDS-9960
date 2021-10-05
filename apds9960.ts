@@ -167,6 +167,4 @@ namespace apds9960 {
         let distance = i2cread(ADDR, APDS9960_PDATA);
         return distance
     }
-
-
 }
