@@ -1,12 +1,6 @@
 {
-  "apds9960.ReadDistance|block":"距離",
-  "apds9960.ReadColor|block":"色相",
-  "apds9960.Init|block":"ジェスチャーセンサを初期化"
-}
-
-{
   "get ID|block":"IDを取得",
-  "get Status|blockId":"ステータス",
+  "apds9960_getstatus|blockId":"ステータス",
   "apds9960.ReadDistance|block":"距離",
   "apds9960.ReadColor|block":"色相",
   "apds9960.Init|block":"Aジェスチャーセンサを初期化"
